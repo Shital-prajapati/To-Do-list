@@ -1,0 +1,203 @@
+/* Basic Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 10px; /* Added padding for mobile */
+  }
+  
+  .container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;  /* Adjust the width for better responsiveness */
+    box-sizing: border-box;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  h1 {
+    font-weight: 500;
+    font-size: 1.5em;
+  }
+  
+  button {
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  input, select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+  }
+  
+  .task-input {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  input, select, #due-date {
+    flex: 1;
+    margin-right: 10px;
+  }
+  
+  .filters {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+  
+  .filter-btn {
+    padding: 5px 10px;
+    margin-right: 10px;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .filter-btn.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  li {
+    background-color: #f9f9f9;
+    padding: 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    flex-wrap: wrap;  /* Allows tasks to wrap nicely on mobile */
+  }
+  
+  li.low {
+    border-left: 5px solid #28a745;
+  }
+  
+  li.medium {
+    border-left: 5px solid #ffc107;
+  }
+  
+  li.high {
+    border-left: 5px solid #dc3545;
+  }
+  
+  li .task-info {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+  
+  li .priority {
+    font-size: 0.8em;
+    font-weight: bold;
+  }
+  
+  li button {
+    background-color: transparent;
+    color: #dc3545;
+    border: none;
+    cursor: pointer;
+  }
+  
+  li button:hover {
+    color: #a71d2a;
+  }
+  
+  /* Dark Mode */
+  body.dark-mode {
+    background-color: #333;
+    color: #f0f0f0;
+  }
+  
+  body.dark-mode .container {
+    background-color: #444;
+  }
+  
+  body.dark-mode li {
+    background-color: #555;
+  }
+  
+  /* Media Queries for Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .task-input {
+      flex-direction: column;
+    }
+  
+    input, select, #due-date, button {
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  
+    li {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    li .task-info {
+      margin-bottom: 10px;
+    }
+  
+    .filter-btn {
+      margin-bottom: 10px;
+    }
+  
+    h1 {
+      font-size: 1.25em;  /* Reduce font size for mobile */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .container {
+      padding: 20px;
+      max-width: 100%;  /* Allow the container to take full width on small screens */
+    }
+  
+    button {
+      padding: 10px;
+    }
+  
+    h1 {
+      font-size: 1.2em;
+    }
+  }
+  
